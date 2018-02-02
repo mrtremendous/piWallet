@@ -29,6 +29,11 @@ if ($admin)
   <?php
 }
 ?>
+
+<button type="button" class="btn btn-default" id="workonTransactions"><?php echo $lang['WALLET_WORKON_TRANSACTIONS']; ?></button>
+<button type="button" class="btn btn-default" id="workonSend"><?php echo $lang['WALLET_WORKON_SEND']; ?></button>
+<button type="button" class="btn btn-default" id="workonReceive"><?php echo $lang['WALLET_WORKON_RECEIVE']; ?></button>
+<button type="button" class="btn btn-default" id="workonProfile"><?php echo $lang['WALLET_WORKON_PROFILE']; ?></button>
 <form>
         <input type="hidden" name="action" value="logout" />
         <button type="submit" class="btn btn-default"><?php echo $lang['WALLET_LOGOUT']; ?></button>
@@ -38,6 +43,7 @@ if ($admin)
 
 <br />
 
+<div id="profileWorkArea" style="display:none;">
 <br />
 <p><strong><?php echo $lang['WALLET_PASSUPDATE']; ?></strong></p>
 <form action="index.php" method="POST" class="clearfix" id="pwdform">
@@ -49,6 +55,9 @@ if ($admin)
     <div class="col-md-2"><button type="submit" class="btn btn-default"><?php echo $lang['WALLET_PASSUPDATECONF']; ?></button></div>
 </form>
 <p id="pwdmsg"></p>
+</div>
+
+<div id="sendWorkArea" style="display:none;">
 <br />
 <p><strong><?php echo $lang['WALLET_SEND']; ?></strong></p>
 <button type="button" class="btn btn-default" id="donate">Donate to <?=$fullname?> wallet's owner!</button><br />
@@ -61,6 +70,9 @@ if ($admin)
     <div class="col-md-2"><button type="submit" class="btn btn-default"><?php echo $lang['WALLET_SENDCONF']; ?></button></div>
 </form>
 <p id="withdrawmsg"></p>
+</div>
+
+<div id="receiveWorkArea" style="display:none;">
 <br />
 <p><strong><?php echo $lang['WALLET_USERADDRESSES']; ?></strong></p>
 <form action="index.php" method="POST" id="newaddressform">
@@ -88,6 +100,9 @@ echo "<tr><td>".$address."</t>";?>
 ?>
 </tbody>
 </table>
+</div>
+
+<div id="transactionsWorkArea">
 <p><?php echo $lang['WALLET_LAST10']; ?></p>
 <table class="table table-bordered table-striped" id="txlist">
 <thead>
@@ -119,6 +134,8 @@ echo "<tr><td>".$address."</t>";?>
    ?>
    </tbody>
 </table>
+</div>
+
 <script type="text/javascript">
 var blockchain_tx_url = "<?=$blockchain_tx_url?>";
 $("#withdrawform input[name='action']").first().attr("name", "jsaction");
@@ -128,6 +145,18 @@ $("#donate").click(function (e){
   $("#donateinfo").show();
   $("#withdrawform input[name='address']").val("<?=$donation_address?>");
   $("#withdrawform input[name='amount']").val("0.01");
+});
+$("#workonTransactions").click(function (e){
+    switchToWorkArea('transactions');
+});
+$("#workonSend").click(function (e){
+    switchToWorkArea('send');
+});
+$("#workonReceive").click(function (e){
+    switchToWorkArea('receive');
+});
+$("#workonProfile").click(function (e){
+    switchToWorkArea('profile');
 });
 $("#withdrawform").submit(function(e)
 {
@@ -235,6 +264,17 @@ $("#pwdform").submit(function(e)
     });
     e.preventDefault();
 });
+
+function switchToWorkArea(workArea) {
+    if (workArea == 'transactions') $("#transactionsWorkArea").show();
+    else $("#transactionsWorkArea").hide();
+    if (workArea == 'send') $("#sendWorkArea").show();
+    else $("#sendWorkArea").hide();
+    if (workArea == 'receive') $("#receiveWorkArea").show();
+    else $("#receiveWorkArea").hide();
+    if (workArea == 'profile') $("#profileWorkArea").show();
+    else $("#profileWorkArea").hide();
+}
 
 function updateTables(json)
 {

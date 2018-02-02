@@ -48,4 +48,9 @@ $lang['WALLET_FEE'] = 'Fee';
 $lang['WALLET_CONFS'] = 'Confs';
 $lang['WALLET_INFO'] = 'Info';
 
+$lang['WALLET_WORKON_TRANSACTIONS'] = 'Transactions';
+$lang['WALLET_WORKON_SEND'] = 'Send';
+$lang['WALLET_WORKON_RECEIVE'] = 'Receive';
+$lang['WALLET_WORKON_PROFILE'] = 'Profile';
+
 ?>
