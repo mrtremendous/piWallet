@@ -33,21 +33,6 @@ if ($admin)
         <input type="hidden" name="action" value="logout" />
         <button type="submit" class="btn btn-default"><?php echo $lang['WALLET_LOGOUT']; ?></button>
 </form>
-<form action="index.php" method="POST">
-<input type="hidden" name="action" value="support" action="index.php"/>
-<button type="submit" class="btn btn-default"><?php echo $lang['WALLET_SUPPORT']; ?></button>
-</form>
-
-<form action="index.php" method="POST">
-<form>
-<input type="hidden" name="action" value="authgen" />
-<button type="submit" class="btn btn-default"><?php echo $lang['WALLET_2FAON']; ?></button>
-</form><p>
-<form action="index.php" method="post">
-<form>
-<input type="hidden" name="action" value="disauth" />
-<button type="submit" class="btn btn-default"><?php echo $lang['WALLET_2FAOFF']; ?></button>
-</form>
 
 <br>
 
@@ -64,8 +49,6 @@ if ($admin)
     <div class="col-md-2"><button type="submit" class="btn btn-default"><?php echo $lang['WALLET_PASSUPDATECONF']; ?></button></div>
 </form>
 <p id="pwdmsg"></p>
-<br />
-<p style="font-size:1em;"><?php echo $lang['WALLET_SUPPORTNOTE']; ?></p>
 <br />
 <p><strong><?php echo $lang['WALLET_SEND']; ?></strong></p>
 <button type="button" class="btn btn-default" id="donate">Donate to <?=$fullname?> wallet's owner!</button><br />
