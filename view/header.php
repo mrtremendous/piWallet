@@ -20,7 +20,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <!-- End Bootstrap include stuff-->
-        <title><?=$fullname?> Wallet</title>
+        <title>Tremendouscoin.me - your Web-based <?=$fullname?> Wallet</title>
         <link rel="shortcut icon" href="favicon.ico">
     </head>
     
@@ -31,7 +31,7 @@
 			<div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<a class="navbar-brand" href="index.php"><?=$fullname?> Wallet</a>
+					<a class="navbar-brand" href="index.php">Tremendouscoin.me - your Web-based <?=$fullname?> Wallet</a>
 				</div>
 				<div class="nav navbar-nav navbar-right">
 					<div class="dropdown langselect">

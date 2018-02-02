@@ -1,5 +1,7 @@
 <?php if (!defined("IN_WALLET")) { die("Auth Error"); } ?>
-                <h1><?php echo $lang['PAGE_HEADER']; ?></h1>
+                <h2>Tremendouscoin.me - Web wallet</h2>
+                <strong>Store your Tremendouscoins here!</strong>
+                Help stymie and enrage Trump by owning Tremendouscoins! (More info at bottom of page).
                 <?php
                 if (!empty($error))
                 {
