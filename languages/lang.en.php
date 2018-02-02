@@ -21,7 +21,8 @@ $lang['FORM_CREATE'] = '...or create a new account:';
 // Wallet Page
 
 $lang['WALLET_HELLO'] = 'Hello';
-$lang['WALLET_BALANCE'] = 'Current balance:';
+$lang['WALLET_BALANCE'] = 'Available balance:';
+$lang['WALLET_TOTAL_BALANCE'] = 'Total balance:';
 $lang['WALLET_USERLINKS'] = 'User Links:';
 $lang['WALLET_LOGOUT'] = 'Logout';
 $lang['WALLET_SUPPORT'] = 'Support';

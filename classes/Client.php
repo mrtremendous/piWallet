@@ -18,8 +18,13 @@ class Client {
 		//return 21;
 	}
 
-       function getAddress($user_session)
-        {
+    function getTotalBalance($user_session)
+    {
+        return $this->jsonrpc->getbalance("zelles(" . $user_session . ")", 0, true);
+    }
+
+	function getAddress($user_session)
+	{
                 return $this->jsonrpc->getaccountaddress("zelles(" . $user_session . ")");
 	}
 

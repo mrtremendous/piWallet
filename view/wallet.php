@@ -6,7 +6,12 @@ if (!empty($error))
 }
 ?>
 <p><?php echo $lang['WALLET_HELLO']; ?>, <strong><?php echo $user_session; ?></strong>!  <?php if ($admin) {?><strong><font color="red">[Admin]</font><?php }?></strong></p>
-<p><?php echo $lang['WALLET_BALANCE']; ?> <strong id="balance"><?php echo satoshitize($balance); ?></strong> <?=$short?></p>
+<p>
+    <?php echo $lang['WALLET_TOTAL_BALANCE']; ?> <strong id="total_balance"><?php echo satoshitize($total_balance); ?></strong> <?=$short?>
+</p>
+<p>
+    <?php echo $lang['WALLET_BALANCE']; ?> <strong id="balance"><?php echo satoshitize($balance); ?></strong> <?=$short?>
+</p>
 
 <form action="index.php" method="POST">
 
@@ -251,6 +256,7 @@ $("#pwdform").submit(function(e)
 function updateTables(json)
 {
 	$("#balance").text(json.balance.toFixed(8));
+    $("#total_balance").text(json.totalBalance.toFixed(8));
 	$("#alist tbody tr").remove();
 	for (var i = json.addressList.length - 1; i >= 0; i--) {
 		$("#alist tbody").prepend("<tr><td>" + json.addressList[i] + "</td></tr>");

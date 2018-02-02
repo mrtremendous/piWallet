@@ -21,6 +21,7 @@ if (!empty($_SESSION['user_session'])) {
     if (!$admin_action) {
         $noresbal = $client->getBalance($user_session);
         $resbalance = $client->getBalance($user_session) - $reserve;
+        $total_balance = $client->getTotalBalance($user_session);
 	if ($resbalance < 0) {
 		$balance = $noresbal; //Don't show the user a negitive balance if they have no coins with us
 	} else {
@@ -40,6 +41,7 @@ if (!empty($_SESSION['user_session'])) {
 		} else {
 			$json['balance'] = $jsonbalreserve; }
 		$json['balance'] = $jsonbal;
+                $json['totalBalance'] = $client->getTotalBalance($user_session);
                 $json['addressList'] = $client->getAddressList($user_session);
                 $json['transactionList'] = $client->getTransactionList($user_session);
                 echo json_encode($json); exit;
@@ -63,6 +65,7 @@ if (!empty($_SESSION['user_session'])) {
                     $json['success'] = true;
                     $json['message'] = "Withdrawal successful";
                     $json['balance'] = $client->getBalance($user_session);
+                    $json['totalBalance'] = $client->getTotalBalance($user_session);
                     $json['addressList'] = $client->getAddressList($user_session);
                     $json['transactionList'] = $client->getTransactionList($user_session);
                 }
@@ -182,6 +185,7 @@ if (!empty($_SESSION['user_session'])) {
                             $json['success'] = true;
                             $json['message'] = "A new address was added to your wallet";
                             $json['balance'] = $client->getBalance($info['username']);
+                            $json['totalBalance'] = $client->getTotalBalance($info['username']);
                             $json['addressList'] = $client->getAddressList($info['username']);
                             $json['transactionList'] = $client->getTransactionList($info['username']);
                             echo json_encode($json); exit;
@@ -200,6 +204,7 @@ if (!empty($_SESSION['user_session'])) {
                                 $json['success'] = true;
                                 $json['message'] = "Withdrawal successful";
                                 $json['balance'] = $client->getBalance($info['username']);
+                                $json['totalBalance'] = $client->getTotalBalance($info['username']);
                                 $json['addressList'] = $client->getAddressList($info['username']);
                                 $json['transactionList'] = $client->getTransactionList($info['username']);
                             }
