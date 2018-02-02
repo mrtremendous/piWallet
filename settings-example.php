@@ -13,6 +13,7 @@ $rpc_user = "bitcoinrpc";
 $rpc_pass = "Cp68nBkCAADKkskaKSskaDKdmSYLtLJ";
 
 $fullname = "Bitcoin"; //Website Title (Do Not include 'wallet')
+$fullname_plural = "Bitcoins"; //Website Title (Do Not include 'wallet')
 $short = "BTC"; //Coin Short (BTC)
 $blockchain_tx_url = "http://blockchain.info/tx/"; //Blockchain Url
 $support = "support@yourwebsite.com"; //Your support eMail

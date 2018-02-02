@@ -34,12 +34,13 @@ $lang['WALLET_PASSUPDATENEW'] = 'New Password';
 $lang['WALLET_PASSUPDATENEWCONF'] = 'Confirm New Password';
 $lang['WALLET_PASSUPDATECONF'] = 'Update Password';
 $lang['WALLET_SUPPORTNOTE'] = 'Please click on Support above and make a note of your Key. It will be used to help identify you if you ever forget your password. This code also changes everytime you change your password.';
-$lang['WALLET_SEND'] = 'Send funds:';
+$lang['WALLET_SEND'] = 'Send ' . $fullname_plural . ':';
+$lang['WALLET_RECEIVE'] = 'Receive ' . $fullname_plural . ':';
 $lang['WALLET_ADDRESS'] = 'Address';
 $lang['WALLET_AMOUNT'] = 'Amount';
 $lang['WALLET_SENDCONF'] = 'Send';
 $lang['WALLET_USERADDRESSES'] = 'Your addresses:';
-$lang['WALLET_NEWADDRESS'] = 'Get a new address';
+$lang['WALLET_NEWADDRESS'] = 'Generate an additional address';
 $lang['WALLET_QRCODE'] = 'QR Code';
 $lang['WALLET_LAST10'] = 'Last 10 transactions:';
 $lang['WALLET_DATE'] = 'Date';
@@ -52,5 +53,8 @@ $lang['WALLET_WORKON_TRANSACTIONS'] = 'Transactions';
 $lang['WALLET_WORKON_SEND'] = 'Send';
 $lang['WALLET_WORKON_RECEIVE'] = 'Receive';
 $lang['WALLET_WORKON_PROFILE'] = 'Profile';
+
+$lang['WALLET_SEND_INSTRUCTIONS'] = 'To send ' . $fullname_plural . ', ask the intended Recipient for a ' . $fullname . ' Address. Enter that Address and an Amount below and click Send.';
+$lang['WALLET_RECEIVE_INSTRUCTIONS'] = 'To receive ' . $fullname_plural . ', ask the Sender to send ' . $fullname_plural . ' to any of your below Addresses.';
 
 ?>

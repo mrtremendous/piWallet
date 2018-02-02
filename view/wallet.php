@@ -45,7 +45,8 @@ if ($admin)
 
 <div id="profileWorkArea" style="display:none;">
 <br />
-<p><strong><?php echo $lang['WALLET_PASSUPDATE']; ?></strong></p>
+<p><strong><?php echo $lang['WALLET_WORKON_PROFILE']; ?></strong></p>
+<p><?php echo $lang['WALLET_PASSUPDATE']; ?></p>
 <form action="index.php" method="POST" class="clearfix" id="pwdform">
     <input type="hidden" name="action" value="password" />
     <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
@@ -60,8 +61,7 @@ if ($admin)
 <div id="sendWorkArea" style="display:none;">
 <br />
 <p><strong><?php echo $lang['WALLET_SEND']; ?></strong></p>
-<button type="button" class="btn btn-default" id="donate">Donate to <?=$fullname?> wallet's owner!</button><br />
-<p id="donateinfo" style="display: none;">Type the amount you want to donate and click <strong>Withdraw</strong></p>
+<p><?php echo $lang['WALLET_SEND_INSTRUCTIONS']; ?></p>
 <form action="index.php" method="POST" class="clearfix" id="withdrawform">
     <input type="hidden" name="action" value="withdraw" />
     <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
@@ -70,11 +70,20 @@ if ($admin)
     <div class="col-md-2"><button type="submit" class="btn btn-default"><?php echo $lang['WALLET_SENDCONF']; ?></button></div>
 </form>
 <p id="withdrawmsg"></p>
+
+<hr/>
+<p><strong>EXAMPLE:</strong></p>
+Feeling generous? <button type="button" class="btn btn-default" id="donate">Click here</button>
+to see how you would send a donation to the owner of this website. (Transaction will not actually occur unless you click SEND.)
+<p id="donateinfo" style="display: none;"></p>
+
 </div>
 
 <div id="receiveWorkArea" style="display:none;">
 <br />
-<p><strong><?php echo $lang['WALLET_USERADDRESSES']; ?></strong></p>
+<p><strong><?php echo $lang['WALLET_RECEIVE']; ?></strong></p>
+<p><?php echo $lang['WALLET_RECEIVE_INSTRUCTIONS']; ?></p>
+<p><?php echo $lang['WALLET_USERADDRESSES']; ?></p>
 <form action="index.php" method="POST" id="newaddressform">
 	<input type="hidden" name="action" value="new_address" />
 	<button type="submit" class="btn btn-default"><?php echo $lang['WALLET_NEWADDRESS']; ?></button>
